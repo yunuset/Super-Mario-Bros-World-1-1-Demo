@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://4fixp6p11ne4"]
+
+[ext_resource type="Script" path="res://Art/Mario&Luigi/Small Mario/Mario.cs" id="1_10oit"]
+[ext_resource type="Texture2D" uid="uid://dlrnxjlkywg8x" path="res://Art/Mario&Luigi/Small Mario/5.png" id="1_cfdo4"]
+[ext_resource type="Texture2D" uid="uid://ctjacv0lvn3n1" path="res://Art/Mario&Luigi/Small Mario/7.png" id="2_lmiwo"]
+[ext_resource type="Texture2D" uid="uid://dqfywk62lpxp7" path="res://Art/Mario&Luigi/Small Mario/1.png" id="2_y017a"]
+[ext_resource type="Texture2D" uid="uid://dg5wn28iypk4k" path="res://Art/Mario&Luigi/Small Mario/8.png" id="3_1mxok"]
+[ext_resource type="Texture2D" uid="uid://c7bswmfladoak" path="res://Art/Mario&Luigi/Small Mario/9.png" id="4_ofyt4"]
+[ext_resource type="Texture2D" uid="uid://b8x16n064ig4d" path="res://Art/Mario&Luigi/Small Mario/4.png" id="5_31l2q"]
+[ext_resource type="Texture2D" uid="uid://ctfae86tscnwu" path="res://Art/Mario&Luigi/Small Mario/3.png" id="6_4e4f0"]
+[ext_resource type="Texture2D" uid="uid://jn6fooe5e372" path="res://Art/Mario&Luigi/Small Mario/2.png" id="7_kh05j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e6biv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cfdo4")
+}],
+"loop": true,
+"name": &"change_direction",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lmiwo")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1mxok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ofyt4")
+}],
+"loop": true,
+"name": &"pole",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_31l2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4e4f0")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_y017a")
+}],
+"loop": true,
+"name": &"stand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_kh05j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4e4f0")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ypc1"]
+size = Vector2(10, 15)
+
+[node name="Mario" type="CharacterBody2D"]
+script = ExtResource("1_10oit")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_e6biv")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_1ypc1")

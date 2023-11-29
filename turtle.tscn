@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://bixbriyyrxovw"]
+
+[ext_resource type="Script" path="res://Turtle.cs" id="1_dfrb4"]
+[ext_resource type="Texture2D" uid="uid://bg23a71a2rkd4" path="res://Art/Enemies/Turtle/5.png" id="2_rgo3j"]
+[ext_resource type="Texture2D" uid="uid://pp688eydvryq" path="res://Art/Enemies/Turtle/3.png" id="3_barvs"]
+[ext_resource type="Texture2D" uid="uid://fugnga6pno0c" path="res://Art/Enemies/Turtle/4.png" id="4_wjioa"]
+[ext_resource type="Texture2D" uid="uid://crlp5ss6s8u50" path="res://Art/Enemies/Turtle/6.png" id="5_e3uxu"]
+[ext_resource type="Texture2D" uid="uid://cpjgjhq26p1wj" path="res://Art/Enemies/Turtle/1.png" id="6_vtdv5"]
+[ext_resource type="Texture2D" uid="uid://b0s3d2crsdsq0" path="res://Art/Enemies/Turtle/2.png" id="7_577p8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ehcg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rgo3j")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_barvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wjioa")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rgo3j")
+}],
+"loop": true,
+"name": &"knock_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_e3uxu")
+}],
+"loop": true,
+"name": &"revive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_vtdv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_577p8")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ype75"]
+size = Vector2(12, 13)
+
+[node name="Turtle" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_dfrb4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -3)
+sprite_frames = SubResource("SpriteFrames_0ehcg")
+animation = &"fly"
+frame_progress = 0.409364
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ype75")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(8.9407e-08, -3.5)
+scale = Vector2(0.9, 1.15)

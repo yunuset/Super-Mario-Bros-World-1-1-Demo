@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://6cy4sjylfoix"]
+
+[ext_resource type="Script" path="res://Gumba.cs" id="1_3axhk"]
+[ext_resource type="Texture2D" uid="uid://cbybblgkf5r61" path="res://Art/Enemies/Gumba/3.png" id="1_8bn7v"]
+[ext_resource type="Texture2D" uid="uid://dqdjfujqdfmqs" path="res://Art/Enemies/Gumba/1.png" id="2_daypn"]
+[ext_resource type="Texture2D" uid="uid://c280a3hjm6saf" path="res://Art/Enemies/Gumba/2.png" id="3_pt8p5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ehcg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8bn7v")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_daypn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pt8p5")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ype75"]
+size = Vector2(12, 13)
+
+[node name="Gumba" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_3axhk")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_0ehcg")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ype75")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(4.17233e-07, 4.17233e-07)
+scale = Vector2(0.8, 0.8)

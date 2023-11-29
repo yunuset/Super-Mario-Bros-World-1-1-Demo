@@ -1,0 +1,109 @@
+[gd_scene load_steps=11 format=3 uid="uid://dct27dw2pmuhj"]
+
+[ext_resource type="Script" path="res://Brick.cs" id="1_k8vb0"]
+[ext_resource type="Texture2D" uid="uid://s7hflqt5ji3j" path="res://Art/Blocks/Block/1.png" id="2_xtaoa"]
+[ext_resource type="Texture2D" uid="uid://cgs606aspe3x6" path="res://Art/Blocks/Block/2.png" id="3_ivsf8"]
+[ext_resource type="Texture2D" uid="uid://dujixlq8ro165" path="res://Art/Blocks/Block/3.png" id="4_b1esk"]
+[ext_resource type="Texture2D" uid="uid://l2xq8p6y2r77" path="res://Art/Blocks/Block/brick_particle.png" id="5_mgus5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5m3a4"]
+size = Vector2(16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3smvk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xtaoa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ivsf8")
+}],
+"loop": true,
+"name": &"destroyed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_b1esk")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_e7uvw"]
+resource_name = "hit_impulse"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Brick:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -5), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jgi8p"]
+_data = {
+"hit_impulse": SubResource("Animation_e7uvw")
+}
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_dgl7g"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 30.43
+gravity = Vector3(0, 800, 0)
+initial_velocity_min = 232.39
+initial_velocity_max = 232.39
+angular_velocity_max = 152.11
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+
+[node name="Brick" type="Node2D"]
+texture_filter = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_5m3a4")
+
+[node name="Brick" type="StaticBody2D" parent="." groups=["block"]]
+script = ExtResource("1_k8vb0")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Brick"]
+sprite_frames = SubResource("SpriteFrames_3smvk")
+animation = &"empty"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Brick"]
+shape = SubResource("RectangleShape2D_5m3a4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Brick"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_jgi8p")
+}
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_dgl7g")
+texture = ExtResource("5_mgus5")
+one_shot = true
+explosiveness = 1.0
+
+[connection signal="body_entered" from="Area2D" to="Brick" method="OnArea2DBodyEntered"]
+[connection signal="body_exited" from="Area2D" to="Brick" method="OnArea2DBodyExited"]

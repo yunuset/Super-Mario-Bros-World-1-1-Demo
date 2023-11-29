@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5g2x02klp8i8"]
+
+[ext_resource type="Script" path="res://Art/Mario&Luigi/Small Mario/MovingScene.cs" id="1_7fdn1"]
+[ext_resource type="Texture2D" uid="uid://fxd6hey354r4" path="res://Art/NES - Super Mario Bros - World 1-1.png" id="1_640nn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlcrb"]
+size = Vector2(1104, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34fj4"]
+size = Vector2(11, 238)
+
+[node name="World_1_1" type="Area2D"]
+
+[node name="MovingScene" type="StaticBody2D" parent="."]
+script = ExtResource("1_7fdn1")
+
+[node name="Sprite2D" type="Sprite2D" parent="MovingScene"]
+position = Vector2(1688, 240)
+texture = ExtResource("1_640nn")
+
+[node name="Ground" type="CollisionShape2D" parent="MovingScene"]
+position = Vector2(552, 224)
+shape = SubResource("RectangleShape2D_nlcrb")
+
+[node name="BackWall" type="StaticBody2D" parent="."]
+
+[node name="Backwall" type="CollisionShape2D" parent="BackWall"]
+position = Vector2(-4.5, 119)
+shape = SubResource("RectangleShape2D_34fj4")

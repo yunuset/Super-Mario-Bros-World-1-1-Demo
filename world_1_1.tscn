@@ -1,0 +1,582 @@
+[gd_scene load_steps=27 format=3 uid="uid://bo3pjsyrbrld0"]
+
+[ext_resource type="Script" path="res://Art/Mario&Luigi/Small Mario/MovingScene.cs" id="1_7fdn1"]
+[ext_resource type="Texture2D" uid="uid://dfa5ijxyukhh8" path="res://Art/NES - Super Mario Bros - World 1-1_empty.png" id="2_k2e2d"]
+[ext_resource type="Script" path="res://Block.cs" id="3_hs4yi"]
+[ext_resource type="PackedScene" uid="uid://ce64cn6chr5p" path="res://coin_block.tscn" id="3_j33li"]
+[ext_resource type="Texture2D" uid="uid://0084sfugpy0f" path="res://Art/Blocks/Coin Block/4.png" id="4_0l0ae"]
+[ext_resource type="PackedScene" uid="uid://dct27dw2pmuhj" path="res://block.tscn" id="5_ng7w3"]
+[ext_resource type="PackedScene" uid="uid://b3du58guhjvw8" path="res://coin.tscn" id="7_05kwg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2rlj6"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0l0ae")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pkp3m"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c0rl7"]
+size = Vector2(28, 32.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6eyud"]
+size = Vector2(28, 47.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qcdli"]
+size = Vector2(28, 63.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgq0b"]
+size = Vector2(25, 5.23975)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdfok"]
+size = Vector2(28, 30.6875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgied"]
+size = Vector2(1103.63, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h73fi"]
+size = Vector2(240, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bw27t"]
+size = Vector2(896, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3oeoh"]
+size = Vector2(1024, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qso6"]
+size = Vector2(32.0001, 2.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3de1"]
+size = Vector2(48, 2.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hl2c"]
+size = Vector2(16, 174)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikmeo"]
+size = Vector2(255, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_omhgy"]
+size = Vector2(111.75, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fm2vi"]
+size = Vector2(12.875, 175)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lpfh"]
+size = Vector2(34, 2.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywqro"]
+size = Vector2(23, 27)
+
+[node name="World_1_1" type="Node2D"]
+script = ExtResource("1_7fdn1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1688, 240)
+texture = ExtResource("2_k2e2d")
+metadata/_edit_group_ = true
+
+[node name="CoinBlock15" parent="." instance=ExtResource("3_j33li")]
+position = Vector2(264, 152)
+metadata/_edit_group_ = true
+
+[node name="CoinBlock26" parent="." instance=ExtResource("3_j33li")]
+position = Vector2(2072, 89)
+metadata/_edit_group_ = true
+
+[node name="CoinBlock27" parent="." instance=ExtResource("3_j33li")]
+position = Vector2(2088, 89)
+metadata/_edit_group_ = true
+
+[node name="CoinBlock16" parent="." instance=ExtResource("3_j33li")]
+position = Vector2(344, 152)
+
+[node name="CoinBlock17" parent="." instance=ExtResource("3_j33li")]
+position = Vector2(376, 152)
+metadata/_edit_group_ = true
+
+[node name="CoinBlock18" parent="." instance=ExtResource("3_j33li")]
+position = Vector2(360, 88)
+metadata/_edit_group_ = true
+
+[node name="CoinBlock20" parent="." instance=ExtResource("3_j33li")]
+position = Vector2(1257, 153)
+metadata/_edit_group_ = true
+
+[node name="CoinBlock21" parent="." instance=ExtResource("3_j33li")]
+position = Vector2(1511, 88)
+metadata/_edit_group_ = true
+
+[node name="CoinBlock22" parent="." instance=ExtResource("3_j33li")]
+position = Vector2(1704, 153)
+metadata/_edit_group_ = true
+
+[node name="CoinBlock23" parent="." instance=ExtResource("3_j33li")]
+position = Vector2(1752, 153)
+metadata/_edit_group_ = true
+
+[node name="CoinBlock24" parent="." instance=ExtResource("3_j33li")]
+position = Vector2(1800, 153)
+metadata/_edit_group_ = true
+
+[node name="CoinBlock25" parent="." instance=ExtResource("3_j33li")]
+position = Vector2(1752, 89)
+metadata/_edit_group_ = true
+
+[node name="CoinBlock28" parent="." instance=ExtResource("3_j33li")]
+position = Vector2(2728, 153)
+metadata/_edit_group_ = true
+
+[node name="CoinBlock19" parent="." instance=ExtResource("3_j33li")]
+position = Vector2(1032, 135)
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" parent="CoinBlock19/CoinBlock" index="1"]
+sprite_frames = SubResource("SpriteFrames_2rlj6")
+animation = &"hit"
+
+[node name="Block38" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(328, 152)
+
+[node name="Block39" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(360, 152)
+
+[node name="Block40" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(392, 152)
+
+[node name="Block41" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(1241, 153)
+
+[node name="Block42" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(1273, 153)
+
+[node name="Block43" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(1287, 88)
+
+[node name="Block45" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(1303, 88)
+
+[node name="Block46" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(1319, 88)
+
+[node name="Block47" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(1335, 88)
+
+[node name="Block48" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(1351, 88)
+
+[node name="Block49" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(1367, 88)
+
+[node name="Block50" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(1383, 88)
+
+[node name="Block51" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(1463, 88)
+
+[node name="Block52" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(1479, 88)
+
+[node name="Block53" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(1512, 153)
+
+[node name="Block54" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(1608, 153)
+
+[node name="Block55" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(1624, 153)
+
+[node name="Block56" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(1495, 88)
+
+[node name="Block44" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(1399, 88)
+
+[node name="Block57" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(1896, 153)
+
+[node name="Block58" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(1944, 89)
+
+[node name="Block59" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(1960, 89)
+
+[node name="Block60" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(1976, 89)
+
+[node name="Block61" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(2072, 153)
+
+[node name="Block63" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(2056, 89)
+
+[node name="Block64" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(2104, 89)
+
+[node name="Block62" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(2088, 153)
+
+[node name="Block65" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(2696, 153)
+
+[node name="Block66" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(2712, 153)
+
+[node name="Block67" parent="." instance=ExtResource("5_ng7w3")]
+position = Vector2(2744, 153)
+
+[node name="Block31" type="StaticBody2D" parent="."]
+position = Vector2(840, 286)
+collision_mask = 6
+script = ExtResource("3_hs4yi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block31"]
+position = Vector2(0, -7.00003)
+shape = SubResource("RectangleShape2D_pkp3m")
+
+[node name="Area2D" type="Area2D" parent="Block31"]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block31/Area2D"]
+position = Vector2(0, -6.00003)
+shape = SubResource("RectangleShape2D_pkp3m")
+
+[node name="Block32" type="StaticBody2D" parent="."]
+position = Vector2(856, 286)
+collision_mask = 6
+script = ExtResource("3_hs4yi")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block32"]
+position = Vector2(0, -7.00003)
+shape = SubResource("RectangleShape2D_pkp3m")
+
+[node name="Area2D" type="Area2D" parent="Block32"]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block32/Area2D"]
+position = Vector2(0, -6.00003)
+shape = SubResource("RectangleShape2D_pkp3m")
+
+[node name="Block33" type="StaticBody2D" parent="."]
+position = Vector2(872, 286)
+collision_mask = 6
+script = ExtResource("3_hs4yi")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block33"]
+position = Vector2(0, -7.00003)
+shape = SubResource("RectangleShape2D_pkp3m")
+
+[node name="Area2D" type="Area2D" parent="Block33"]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block33/Area2D"]
+position = Vector2(0, -6.00003)
+shape = SubResource("RectangleShape2D_pkp3m")
+
+[node name="Block34" type="StaticBody2D" parent="."]
+position = Vector2(888, 286)
+collision_mask = 6
+script = ExtResource("3_hs4yi")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block34"]
+position = Vector2(0, -7.00003)
+shape = SubResource("RectangleShape2D_pkp3m")
+
+[node name="Area2D" type="Area2D" parent="Block34"]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block34/Area2D"]
+position = Vector2(0, -6.00003)
+shape = SubResource("RectangleShape2D_pkp3m")
+
+[node name="Block35" type="StaticBody2D" parent="."]
+position = Vector2(904, 286)
+collision_mask = 6
+script = ExtResource("3_hs4yi")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block35"]
+position = Vector2(0, -7.00003)
+shape = SubResource("RectangleShape2D_pkp3m")
+
+[node name="Area2D" type="Area2D" parent="Block35"]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block35/Area2D"]
+position = Vector2(0, -6.00003)
+shape = SubResource("RectangleShape2D_pkp3m")
+
+[node name="Block36" type="StaticBody2D" parent="."]
+position = Vector2(920, 286)
+collision_mask = 6
+script = ExtResource("3_hs4yi")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block36"]
+position = Vector2(0, -7.00003)
+shape = SubResource("RectangleShape2D_pkp3m")
+
+[node name="Area2D" type="Area2D" parent="Block36"]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block36/Area2D"]
+position = Vector2(0, -6.00003)
+shape = SubResource("RectangleShape2D_pkp3m")
+
+[node name="Block37" type="StaticBody2D" parent="."]
+position = Vector2(936, 286)
+collision_mask = 6
+script = ExtResource("3_hs4yi")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block37"]
+position = Vector2(0, -7.00003)
+shape = SubResource("RectangleShape2D_pkp3m")
+
+[node name="Area2D" type="Area2D" parent="Block37"]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block37/Area2D"]
+position = Vector2(0, -6.00003)
+shape = SubResource("RectangleShape2D_pkp3m")
+
+[node name="Pipe" type="StaticBody2D" parent="."]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipe"]
+position = Vector2(464, 192.5)
+shape = SubResource("RectangleShape2D_c0rl7")
+
+[node name="Pipe2" type="StaticBody2D" parent="."]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipe2"]
+position = Vector2(624, 184.75)
+shape = SubResource("RectangleShape2D_6eyud")
+
+[node name="Pipe3" type="StaticBody2D" parent="."]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipe3"]
+position = Vector2(752, 176.375)
+shape = SubResource("RectangleShape2D_qcdli")
+
+[node name="Pipe4" type="StaticBody2D" parent="."]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipe4"]
+position = Vector2(928, 176.313)
+shape = SubResource("RectangleShape2D_qcdli")
+
+[node name="Area2D" type="Area2D" parent="Pipe4"]
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipe4/Area2D"]
+position = Vector2(927.5, 144)
+shape = SubResource("RectangleShape2D_jgq0b")
+
+[node name="Pipe5" type="StaticBody2D" parent="."]
+position = Vector2(2614.75, 191.767)
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipe5"]
+position = Vector2(9.25366, 0.576721)
+shape = SubResource("RectangleShape2D_bdfok")
+
+[node name="Pipe6" type="StaticBody2D" parent="."]
+position = Vector2(2879.08, 188.4)
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pipe6"]
+position = Vector2(0.921143, 3.60034)
+shape = SubResource("RectangleShape2D_bdfok")
+
+[node name="Ground" type="StaticBody2D" parent="." groups=["ground"]]
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(551.813, 224)
+shape = SubResource("RectangleShape2D_cgied")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground"]
+position = Vector2(1256, 224)
+shape = SubResource("RectangleShape2D_h73fi")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Ground"]
+position = Vector2(2928, 224)
+shape = SubResource("RectangleShape2D_bw27t")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground"]
+position = Vector2(1936, 224)
+shape = SubResource("RectangleShape2D_3oeoh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+polygon = PackedVector2Array(2208, 144, 2208, 208, 2144, 208, 2144, 192, 2160, 192, 2160, 175, 2176, 175, 2176, 160, 2192, 160, 2192, 144)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ground"]
+polygon = PackedVector2Array(2240, 144, 2240, 208, 2304, 208, 2304, 192, 2288, 192, 2288, 176, 2272, 176, 2272, 160, 2256, 160, 2256, 144)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Ground"]
+position = Vector2(2411.55, 190.27)
+polygon = PackedVector2Array(36.4497, -46.2704, 36.4497, 16.7296, -43.5503, 16.7296, -43.5503, 1.72958, -27.5503, 1.72958, -27.5503, -14.2704, -11.5503, -14.2704, -11.5503, -30.2704, 4.44971, -30.2704, 4.44971, -46.2704)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Ground"]
+polygon = PackedVector2Array(2480, 144, 2480, 208, 2544, 208, 2544, 192, 2528, 192, 2528, 176, 2512, 176, 2512, 160, 2496, 160, 2496, 144)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Ground"]
+position = Vector2(2982, 167)
+polygon = PackedVector2Array(-85.9998, 41, 58.0002, 41, 57.7888, -87.0729, 25.7888, -87.0729, 25.7888, -71.0729, 9.78882, -71.0729, 9.78882, -55.0729, -6.21118, -55.0729, -6.21118, -39.0729, -22.2112, -39.0729, -22.2112, -23.0729, -38.2112, -23.0729, -38.2112, -7.07288, -54.2112, -7.07288, -54.2112, 8.92712, -70.2112, 8.92712, -70.2112, 24.9271, -86.2112, 24.9271)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Ground"]
+position = Vector2(3175.21, 199.377)
+polygon = PackedVector2Array(-7.21045, 8.62311, 8.78955, 8.62311, 8.78955, -7.37689, -7.21045, -7.37689)
+
+[node name="DeathBox" type="Area2D" parent="."]
+position = Vector2(1, 0)
+collision_mask = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBox"]
+position = Vector2(1119, 238)
+shape = SubResource("RectangleShape2D_3qso6")
+
+[node name="DeathBox2" type="Area2D" parent="."]
+position = Vector2(1392, 238)
+collision_mask = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBox2"]
+position = Vector2(8.00012, -0.125)
+shape = SubResource("RectangleShape2D_g3de1")
+
+[node name="DeathBox3" type="Area2D" parent="."]
+position = Vector2(2454, 238)
+collision_mask = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathBox3"]
+position = Vector2(10, -0.25)
+shape = SubResource("RectangleShape2D_3qso6")
+
+[node name="Ground2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2"]
+position = Vector2(776, 360)
+shape = SubResource("RectangleShape2D_5hl2c")
+
+[node name="Ground3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground3"]
+position = Vector2(896.5, 464.5)
+shape = SubResource("RectangleShape2D_ikmeo")
+
+[node name="Ground4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground4"]
+position = Vector2(888.125, 424)
+shape = SubResource("RectangleShape2D_omhgy")
+
+[node name="Ground5" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground5"]
+position = Vector2(1017.56, 359.5)
+shape = SubResource("RectangleShape2D_fm2vi")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground5"]
+position = Vector2(994, 418.875)
+shape = SubResource("RectangleShape2D_1lpfh")
+
+[node name="Area2D" type="Area2D" parent="Ground5"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground5/Area2D"]
+position = Vector2(988, 433.5)
+shape = SubResource("RectangleShape2D_ywqro")
+
+[node name="Coin20" parent="." instance=ExtResource("7_05kwg")]
+position = Vector2(856, 329)
+
+[node name="Coin25" parent="." instance=ExtResource("7_05kwg")]
+position = Vector2(840, 361)
+
+[node name="Coin32" parent="." instance=ExtResource("7_05kwg")]
+position = Vector2(840, 393)
+
+[node name="Coin33" parent="." instance=ExtResource("7_05kwg")]
+position = Vector2(856, 393)
+
+[node name="Coin34" parent="." instance=ExtResource("7_05kwg")]
+position = Vector2(872, 393)
+
+[node name="Coin35" parent="." instance=ExtResource("7_05kwg")]
+position = Vector2(888, 393)
+
+[node name="Coin36" parent="." instance=ExtResource("7_05kwg")]
+position = Vector2(904, 393)
+
+[node name="Coin37" parent="." instance=ExtResource("7_05kwg")]
+position = Vector2(920, 393)
+
+[node name="Coin38" parent="." instance=ExtResource("7_05kwg")]
+position = Vector2(936, 393)
+
+[node name="Coin26" parent="." instance=ExtResource("7_05kwg")]
+position = Vector2(856, 361)
+
+[node name="Coin27" parent="." instance=ExtResource("7_05kwg")]
+position = Vector2(872, 361)
+
+[node name="Coin28" parent="." instance=ExtResource("7_05kwg")]
+position = Vector2(888, 361)
+
+[node name="Coin29" parent="." instance=ExtResource("7_05kwg")]
+position = Vector2(904, 361)
+
+[node name="Coin30" parent="." instance=ExtResource("7_05kwg")]
+position = Vector2(920, 361)
+
+[node name="Coin31" parent="." instance=ExtResource("7_05kwg")]
+position = Vector2(936, 361)
+
+[node name="Coin21" parent="." instance=ExtResource("7_05kwg")]
+position = Vector2(872, 329)
+
+[node name="Coin22" parent="." instance=ExtResource("7_05kwg")]
+position = Vector2(888, 329)
+
+[node name="Coin23" parent="." instance=ExtResource("7_05kwg")]
+position = Vector2(904, 329)
+
+[node name="Coin24" parent="." instance=ExtResource("7_05kwg")]
+position = Vector2(920, 329)
+
+[connection signal="body_entered" from="Block31/Area2D" to="Block31" method="OnArea2DBodyEntered"]
+[connection signal="body_entered" from="Block32/Area2D" to="Block32" method="OnArea2DBodyEntered"]
+[connection signal="body_entered" from="Block33/Area2D" to="Block33" method="OnArea2DBodyEntered"]
+[connection signal="body_entered" from="Block34/Area2D" to="Block34" method="OnArea2DBodyEntered"]
+[connection signal="body_entered" from="Block35/Area2D" to="Block35" method="OnArea2DBodyEntered"]
+[connection signal="body_entered" from="Block36/Area2D" to="Block36" method="OnArea2DBodyEntered"]
+[connection signal="body_entered" from="Block37/Area2D" to="Block37" method="OnArea2DBodyEntered"]
+[connection signal="body_entered" from="Pipe4/Area2D" to="." method="OnPipeEntered"]
+[connection signal="body_exited" from="Pipe4/Area2D" to="." method="OnPipeExited"]
+[connection signal="body_entered" from="DeathBox" to="." method="OnDeathBoxBodyEntered"]
+[connection signal="body_entered" from="DeathBox2" to="." method="OnDeathBoxBodyEntered"]
+[connection signal="body_entered" from="DeathBox3" to="." method="OnDeathBoxBodyEntered"]
+[connection signal="body_entered" from="Ground5/Area2D" to="." method="OnPipe2Entered"]
+
+[editable path="CoinBlock16"]
+[editable path="CoinBlock19"]

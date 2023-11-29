@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt7yq2f55qf5f"]
+
+[ext_resource type="PackedScene" uid="uid://bo3pjsyrbrld0" path="res://world_1_1.tscn" id="1_mwhmc"]
+[ext_resource type="PackedScene" uid="uid://epbajxcdeqgh" path="res://mario.tscn" id="3_4dqj7"]
+[ext_resource type="PackedScene" uid="uid://6cy4sjylfoix" path="res://gumba.tscn" id="3_i8en5"]
+[ext_resource type="PackedScene" uid="uid://bixbriyyrxovw" path="res://turtle.tscn" id="3_v6gxk"]
+
+[node name="Main" type="Node"]
+
+[node name="World_1_1" parent="." instance=ExtResource("1_mwhmc")]
+
+[node name="Gumba" parent="World_1_1" instance=ExtResource("3_i8en5")]
+position = Vector2(386, 200)
+
+[node name="Gumba2" parent="World_1_1" instance=ExtResource("3_i8en5")]
+position = Vector2(584, 199)
+
+[node name="Gumba3" parent="World_1_1" instance=ExtResource("3_i8en5")]
+position = Vector2(676, 199)
+
+[node name="Gumba4" parent="World_1_1" instance=ExtResource("3_i8en5")]
+position = Vector2(705, 199)
+
+[node name="Gumba6" parent="World_1_1" instance=ExtResource("3_i8en5")]
+position = Vector2(1322, 70)
+
+[node name="Gumba7" parent="World_1_1" instance=ExtResource("3_i8en5")]
+position = Vector2(1361, 70)
+
+[node name="Gumba8" parent="World_1_1" instance=ExtResource("3_i8en5")]
+position = Vector2(1601, 200)
+
+[node name="Gumba9" parent="World_1_1" instance=ExtResource("3_i8en5")]
+position = Vector2(1630, 200)
+
+[node name="Gumba10" parent="World_1_1" instance=ExtResource("3_i8en5")]
+position = Vector2(1841, 200)
+
+[node name="Gumba11" parent="World_1_1" instance=ExtResource("3_i8en5")]
+position = Vector2(1870, 200)
+
+[node name="Gumba12" parent="World_1_1" instance=ExtResource("3_i8en5")]
+position = Vector2(1991, 200)
+
+[node name="Gumba13" parent="World_1_1" instance=ExtResource("3_i8en5")]
+position = Vector2(2022, 200)
+
+[node name="Gumba15" parent="World_1_1" instance=ExtResource("3_i8en5")]
+position = Vector2(2108, 200)
+
+[node name="Gumba14" parent="World_1_1" instance=ExtResource("3_i8en5")]
+position = Vector2(2076, 200)
+
+[node name="Gumba5" parent="World_1_1" instance=ExtResource("3_i8en5")]
+position = Vector2(2787, 200)
+
+[node name="Gumba16" parent="World_1_1" instance=ExtResource("3_i8en5")]
+position = Vector2(2817, 200)
+
+[node name="Turtle" parent="World_1_1" instance=ExtResource("3_v6gxk")]
+position = Vector2(1746, 199)
+state = "walk"
+
+[node name="Mario" parent="." instance=ExtResource("3_4dqj7")]
+position = Vector2(40, 191)

@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=3 uid="uid://ce64cn6chr5p"]
+
+[ext_resource type="Script" path="res://CoinBlock.cs" id="1_rot4o"]
+[ext_resource type="Texture2D" uid="uid://m0qr4fpld4fj" path="res://Art/Blocks/Coin Block/1.png" id="2_nrcre"]
+[ext_resource type="Texture2D" uid="uid://cn0l7oanfv271" path="res://Art/Blocks/Coin Block/2.png" id="3_mj7dp"]
+[ext_resource type="Texture2D" uid="uid://dpdvxndd2xbpy" path="res://Art/Blocks/Coin Block/3.png" id="4_27rg8"]
+[ext_resource type="Texture2D" uid="uid://0084sfugpy0f" path="res://Art/Blocks/Coin Block/4.png" id="5_bqmui"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8ih7"]
+size = Vector2(16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aer0i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nrcre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mj7dp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_27rg8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_bqmui")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_bvx54"]
+resource_name = "hit_impulse"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -5), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f6wrj"]
+_data = {
+"hit_impulse": SubResource("Animation_bvx54")
+}
+
+[node name="CoinBlock" type="Node2D"]
+
+[node name="CoinBlock" type="StaticBody2D" parent="." groups=["block"]]
+script = ExtResource("1_rot4o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoinBlock"]
+shape = SubResource("RectangleShape2D_v8ih7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CoinBlock"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_aer0i")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CoinBlock"]
+libraries = {
+"": SubResource("AnimationLibrary_f6wrj")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_v8ih7")
+
+[connection signal="body_entered" from="Area2D" to="CoinBlock" method="OnArea2DBodyEntered"]
+[connection signal="body_exited" from="Area2D" to="CoinBlock" method="OnArea2DBodyExited"]

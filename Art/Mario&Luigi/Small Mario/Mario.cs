@@ -1,5 +1,6 @@
 using Godot;
 using System.Linq;
+using System.Collections.Generic;
 
 /*Vector2 motion = Velocity * (float)delta;
         KinematicCollision2D collision;
@@ -78,7 +79,7 @@ public partial class Mario : CharacterBody2D
     }
     public Vector2 Bounce(Vector2 velocity)
     {
-        velocity.Y -= bounceSpeed;
+        velocity.Y = -bounceSpeed;
         bounced = true;
         return velocity;
     }
@@ -200,9 +201,19 @@ public partial class Mario : CharacterBody2D
             Position = new Vector2(x: Mathf.Clamp(Position.X, 10, 100), y: Position.Y);
         }
         var collisions = GetAllCollisions();
+        List<Node> characters = new List<Node>();
         foreach (KinematicCollision2D collision in collisions)
         {
+            if (collision == null)
+            {
+                continue;
+            }
             var collider = (PhysicsBody2D)collision.GetCollider();
+            if (characters.Contains(collider))
+            {
+                continue;
+            }
+            characters.Add(collider);
             var normal = collision.GetNormal();
             if (collider.IsInGroup("enemy"))
             {

@@ -61,5 +61,8 @@ position = Vector2(2817, 200)
 position = Vector2(1746, 199)
 state = "walk"
 
+[node name="Turtle2" parent="World_1_1" instance=ExtResource("3_v6gxk")]
+position = Vector2(866, 170)
+
 [node name="Mario" parent="." instance=ExtResource("3_4dqj7")]
 position = Vector2(40, 191)
